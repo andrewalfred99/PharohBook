@@ -1,6 +1,6 @@
 using System;
 
-namespace PharohBooks.Models
+namespace PharohBooks.Models.ViewModles
 {
     public class ErrorViewModel
     {

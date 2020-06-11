@@ -14,4 +14,10 @@
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.4" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PharohBook.DataAccess\PharohBooks.DataAccess.csproj" />
+    <ProjectReference Include="..\PharohBooks.Models\PharohBooks.Models.csproj" />
+    <ProjectReference Include="..\PharohBooks.Utility\PharohBooks.Utility.csproj" />
+  </ItemGroup>
+
 </Project>

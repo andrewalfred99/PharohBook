@@ -14,4 +14,9 @@
     <Folder Include="Data\Migrations\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\PharohBooks.Models\PharohBooks.Models.csproj" />
+    <ProjectReference Include="..\PharohBooks.Utility\PharohBooks.Utility.csproj" />
+  </ItemGroup>
+
 </Project>

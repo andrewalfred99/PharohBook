@@ -5,7 +5,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using PharohBooks.Models;
+
+using PharohBooks.Models.ViewModles;
 
 namespace PharohBooks.Controllers
 {
