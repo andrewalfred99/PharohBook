@@ -8,8 +8,9 @@ using Microsoft.Extensions.Logging;
 
 using PharohBooks.Models.ViewModles;
 
-namespace PharohBooks.Controllers
+namespace PharohBooks.areas.Customer.Controllers
 {
+    [Area("Customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
