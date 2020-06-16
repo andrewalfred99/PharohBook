@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using PharohBooks.Models;
 
 namespace PharohBooks.DataAccess.Data
 {
@@ -12,5 +13,6 @@ namespace PharohBooks.DataAccess.Data
             : base(options)
         {
         }
+        public DbSet<Category> Categories { get; set; }
     }
 }
