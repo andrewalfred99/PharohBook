@@ -9,7 +9,7 @@ namespace PharohBooks.DataAccess.Repository.IRepository
 {
     public interface IRepository<T> where T : class
     {
-        T GetT(int id);
+        T Get(int id);
 
         IEnumerable<T> GetAll(
             Expression<Func<T, bool>> filter = null,
@@ -18,13 +18,15 @@ namespace PharohBooks.DataAccess.Repository.IRepository
             );
 
         T GetFirstOrDefault(
-                    Expression<Func<T, bool>> filter = null,
-                    string includeProperties = null
-                    );
+            Expression<Func<T, bool>> filter = null,
+            string includeProperties = null
+            );
 
         void Add(T entity);
         void Remove(int id);
         void Remove(T entity);
         void RemoveRange(IEnumerable<T> entity);
+
+
     }
 }

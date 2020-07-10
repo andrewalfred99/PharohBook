@@ -26,16 +26,21 @@ namespace PharohBooks.DataAccess.Repository
             dbSet.Add(entity);
         }
 
+        public T Get(int id)
+        {
+            return dbSet.Find(id);
+        }
+
         public IEnumerable<T> GetAll(Expression<Func<T, bool>> filter = null, Func<IQueryable<T>, IOrderedQueryable<T>> orderBy = null, string includeProperties = null)
         {
             IQueryable<T> query = dbSet;
 
-            if(filter != null)
+            if (filter != null)
             {
                 query = query.Where(filter);
             }
 
-            if(includeProperties != null)
+            if (includeProperties != null)
             {
                 foreach (var includeProp in includeProperties.Split(new char[] { ',' }, StringSplitOptions.RemoveEmptyEntries))
                 {
@@ -43,7 +48,7 @@ namespace PharohBooks.DataAccess.Repository
                 }
             }
 
-            if(orderBy != null)
+            if (orderBy != null)
             {
                 return orderBy(query).ToList();
             }
@@ -67,12 +72,8 @@ namespace PharohBooks.DataAccess.Repository
                 }
             }
 
-            return query.FirstOrDefault();
-        }
 
-        public T GetT(int id)
-        {
-            return dbSet.Find(id);
+            return query.FirstOrDefault();
         }
 
         public void Remove(int id)
