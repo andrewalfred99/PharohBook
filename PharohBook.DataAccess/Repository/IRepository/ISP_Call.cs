@@ -6,9 +6,9 @@ using System.Text;
 
 namespace PharohBooks.DataAccess.Repository.IRepository
 {
-    interface ISP_Call
+    public interface ISP_Call : IDisposable
     {
-        T Single<T>(string proceduraName, DynamicParameters param = null);
+        T Single<T>(string procedureName, DynamicParameters param = null);
 
         void Execute(string procedureName, DynamicParameters param = null);
 
@@ -16,6 +16,6 @@ namespace PharohBooks.DataAccess.Repository.IRepository
 
         IEnumerable<T> List<T>(string procedureName, DynamicParameters param = null);
 
-        Tuple<IEnumerable<T1>,IEnumerable<T2>> List<T1, T2>(string procedureName, DynamicParameters param = null);
+        Tuple<IEnumerable<T1>, IEnumerable<T2>> List<T1, T2>(string procedureName, DynamicParameters param = null);
     }
 }

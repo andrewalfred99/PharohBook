@@ -6,7 +6,7 @@ using System.Text;
 
 namespace PharohBooks.DataAccess.Repository
 {
-  public  class UnitOfWork : IUnitOfWork
+    public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationDbContext _db;
 
@@ -18,10 +18,7 @@ namespace PharohBooks.DataAccess.Repository
         }
 
         public ICategoryRepository Category { get; private set; }
-
         public ISP_Call SP_Call { get; private set; }
-
-        SP_Call IUnitOfWork.SP_Call => throw new NotImplementedException();
 
         public void Dispose()
         {
