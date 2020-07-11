@@ -313,6 +313,20 @@ namespace PharohBooks.DataAccess.Migrations
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });
+            modelBuilder.Entity("PharohBooks.Models.Product", b =>
+            {
+                b.HasOne("PharohBooks.Models.Category", "Category")
+                    .WithMany()
+                    .HasForeignKey("CategoryId")
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .IsRequired();
+
+                b.HasOne("PharohBooks.Models.CoverType", "CoverType")
+                    .WithMany()
+                    .HasForeignKey("CoverTypeId")
+                    .OnDelete(DeleteBehavior.Cascade)
+                    .IsRequired();
+            });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
