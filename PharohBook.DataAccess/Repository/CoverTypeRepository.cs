@@ -19,11 +19,11 @@ namespace PharohBooks.DataAccess.Repository
 
         public void Update(CoverType coverType)
         {
-            var objFromDb = _db.Categories.FirstOrDefault(s => s.Id == coverType.Id);
+            var objFromDb = _db.CoverTypes.FirstOrDefault(s => s.Id == coverType.Id);
             if (objFromDb != null)
             {
                 objFromDb.Name = coverType.Name;
-                
+
             }
         }
     }

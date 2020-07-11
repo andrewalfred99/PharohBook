@@ -45,6 +45,22 @@ namespace PharohBooks.DataAccess.Migrations
 
                     b.ToTable("AspNetRoles");
                 });
+            modelBuilder.Entity("PharohBooks.Models.CoverType", b =>
+            {
+                b.Property<int>("Id")
+                    .ValueGeneratedOnAdd()
+                    .HasColumnType("int")
+                    .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                b.Property<string>("Name")
+                    .IsRequired()
+                    .HasColumnType("nvarchar(50)")
+                    .HasMaxLength(50);
+
+                b.HasKey("Id");
+
+                b.ToTable("CoverTypes");
+            });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
                 {
